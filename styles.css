@@ -1,0 +1,53 @@
+body{
+    background-color: blanchedalmond;
+    font-family:'Times New Roman', Times, serif;
+}
+
+main{
+    width: 21cm;
+    min-height: 29.7cm;
+    
+    padding: 1cm 2cm 1cm 2cm;
+    
+    margin: .5cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+main h1{
+    text-align: center;
+}
+
+main > h4{
+    text-align: center;
+    margin: 0px;
+}
+main h2{
+    border-bottom: 1px solid black;
+    margin-bottom: 0px;
+}
+.section-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-header h3{
+    margin-bottom: 3px;
+}
+
+.section-content{
+    margin-left: 0;
+}
+.section-content span{
+    display: block;
+}
+
+ul{
+    margin: 0;
+}
+li{
+    margin: 3px 0;
+  }
