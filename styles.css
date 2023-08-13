@@ -4,11 +4,10 @@ body{
 }
 
 main{
-    width: 21cm;
-    min-height: 29.7cm;
-    
+    /*Size to make div look like 8.5" x 11" piece of paper */
+    width: 21.6cm;
+    min-height: 27.94cm;
     padding: 1cm 2cm 1cm 2cm;
-    
     margin: .5cm auto;
     border: 1px #D3D3D3 solid;
     border-radius: 5px;
@@ -48,6 +47,34 @@ main h2{
 ul{
     margin: 0;
 }
+
 li{
     margin: 3px 0;
+  }
+
+@media print {
+    @page {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+
+    h1{
+        text-align: center;
+        margin-top: .75em;
+    }
+    
+    h4{
+        text-align: center;
+        font-size:small;
+        margin: 0px;
+    }
+
+    h2{
+  
+        border-bottom: 1px solid black;
+        margin-bottom: 0px;
+    }
+
   }
