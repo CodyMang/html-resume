@@ -1,5 +1,13 @@
+:root{
+    --main-color-1: #77A6F7;
+    --accent-color-1: #8D8741;
+    --accent-color-2: #DAAD86;
+    --accent-color-3:#BC986A;
+    --accent-color-4:#AC3B61;
+}
+
 body{
-    background-color: blanchedalmond;
+    background-color: var(--main-color-1);
     font-family:'Times New Roman', Times, serif;
 }
 
@@ -14,6 +22,42 @@ main{
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.visit_counter{
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    
+    justify-content: space-between;
+    position: fixed;
+    display: flex;
+
+    border-radius: 7px;
+    box-shadow: 3px 3px#0F0F0F;
+}
+
+#close_button{
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+}
+.count_container{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.count_container span{
+    font-size: 1.5rem;
+}
+
+#v_count{
+    display: block;
+}
+
 
 main h1{
     text-align: center;

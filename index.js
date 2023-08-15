@@ -15,3 +15,9 @@ function printMainContent() {
 
     document.body.innerHTML = originalContents;
 }
+
+document.getElementById("close_button")
+.addEventListener("click", (event) => {
+    const elem = document.getElementsByClassName("visit_counter")[0];
+    elem.style.display = "none";
+});
