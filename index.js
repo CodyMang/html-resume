@@ -16,8 +16,32 @@ function printMainContent() {
     document.body.innerHTML = originalContents;
 }
 
+function setCounter(new_value){
+    document.getElementById("v_count").innerHTML = new_value;
+}
+
+async function check_visit_and_increment(){
+    let v_count_local = localStorage.getItem("v_count_local");
+    if(v_count_local === null){
+        const url = "https://skymen288a.execute-api.us-east-1.amazonaws.com/default/count_update_visitor"
+        const response = await fetch(url, {
+            method: "GET",  
+            mode: "cors"
+          });
+        let res = await response.json();
+        v_count_local = res.v_count;
+        if(v_count_local){
+            localStorage.setItem("v_count_local", v_count_local);
+        }
+    }
+    setCounter(v_count_local);
+}
+
 document.getElementById("close_button")
 .addEventListener("click", (event) => {
     const elem = document.getElementsByClassName("visit_counter")[0];
     elem.style.display = "none";
 });
+
+
+check_visit_and_increment();
