@@ -21,19 +21,24 @@ function setCounter(new_value){
 }
 
 async function check_visit_and_increment(){
+    localStorage.clear();
     let v_count_local = localStorage.getItem("v_count_local");
+
     if(v_count_local === null){
-        const url = "https://skymen288a.execute-api.us-east-1.amazonaws.com/cors-cmangdotcom/count_update_visitor"
+        const url = "https://lhqa1kk4s3.execute-api.us-east-1.amazonaws.com/v2/visitor_count"
+
         const response = await fetch(url, {
-            method: "GET",  
+            method: "PATCH", 
             mode: "cors"
-          });
+        });
+
         let res = await response.json();
         v_count_local = res.v_count;
         if(v_count_local){
             localStorage.setItem("v_count_local", v_count_local);
         }
     }
+    
     setCounter(v_count_local);
 }
 
