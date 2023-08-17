@@ -10,7 +10,7 @@ permissions:
       id-token: write   # This is required for requesting the JWT
       contents: read    # This is required for actions/checkout
 jobs:
-  AssumeRoleAndCallIdentity:
+  SyncWithS3Bucket:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone the repository
@@ -22,6 +22,6 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       # Hello from AWS: WhoAmI
-      - name: Delete and Upload
+      - name: Sync
         run: |
-          aws s3 sync build s3://codymang-resume --delete
+          aws s3 sync / s3://codymang-resume --delete
