@@ -24,4 +24,4 @@ jobs:
       # Hello from AWS: WhoAmI
       - name: Sync
         run: |
-          aws s3 sync / s3://codymang-resume --delete
+          aws s3 sync build s3://codymang-resume --delete
