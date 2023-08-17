@@ -23,7 +23,7 @@ function setCounter(new_value){
 async function check_visit_and_increment(){
     let v_count_local = localStorage.getItem("v_count_local");
     if(v_count_local === null){
-        const url = "https://skymen288a.execute-api.us-east-1.amazonaws.com/default/count_update_visitor"
+        const url = "https://skymen288a.execute-api.us-east-1.amazonaws.com/cors-cmangdotcom/count_update_visitor"
         const response = await fetch(url, {
             method: "GET",  
             mode: "cors"
