@@ -24,7 +24,7 @@ async function check_visit_and_increment(){
     let v_count_local = localStorage.getItem("v_count_local");
 
     if(v_count_local === null){
-        const url = "https://lhqa1kk4s3.execute-api.us-east-1.amazonaws.com/v2/visitor_count"
+        const url = "https://imx9s46q1i.execute-api.us-east-1.amazonaws.com/serverless_lambda_stage/t_visitor_count"
 
         const response = await fetch(url, {
             method: "PATCH",
