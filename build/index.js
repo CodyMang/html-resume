@@ -21,7 +21,7 @@ function setCounter(new_value){
 }
 
 async function check_visit_and_increment(){
-    let v_count_local = localStorage.getItem("v_count_local");
+    let v_count_local = sessionStorage.getItem("v_count_local");
 
     if(v_count_local === null){
         const url = "https://kdy0eottji.execute-api.us-east-1.amazonaws.com/serverless_lambda_stage/visitor_count";
@@ -34,7 +34,7 @@ async function check_visit_and_increment(){
         let res = await response.json();
         v_count_local = res.v_count;
         if(v_count_local){
-            localStorage.setItem("v_count_local", v_count_local);
+            sessionStorage.setItem("v_count_local", v_count_local);
         }
     }
     

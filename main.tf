@@ -213,7 +213,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
       AWS_ACCESS_KEY_ID = var.AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
     }
-    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths '/index.js'"
+    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths '/*'"
   }
 }
 
