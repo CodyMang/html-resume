@@ -1,9 +1,17 @@
 
 terraform {
+  cloud {
+    organization = "codywmangham"
+
+    workspaces {
+      name = "resume-frontend-aws"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 5.13.1"
     }
   }
 
@@ -14,9 +22,11 @@ locals {
   mime_types = jsondecode(file("${path.module}/mime.json"))
 }
 
+
 provider "aws" {
-    alias = "east"
-    region  = "us-east-1"
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_ACCESS_KEY
+  region = var.AWS_REGION
 }
 
 
@@ -202,7 +212,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   provisioner "local-exec" {
-    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths 'index.js'"
+    environment = {
+      AWS_ACCESS_KEY_ID = var.AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
+    }
+    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths '/index.js'"
   }
 }
 
