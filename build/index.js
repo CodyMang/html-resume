@@ -17,7 +17,13 @@ function printMainContent() {
 }
 
 function setCounter(new_value){
-    document.getElementById("v_count").innerHTML = new_value;
+    let element = document.getElementById("v_count");
+    if(new_value == null){
+        element.style.setProperty("display","none")
+    }
+    else{
+        element.style.setProperty("--num",parseInt(new_value))
+    }
 }
 
 async function check_visit_and_increment(){
@@ -37,15 +43,11 @@ async function check_visit_and_increment(){
             sessionStorage.setItem("v_count_local", v_count_local);
         }
     }
-    
+
     setCounter(v_count_local);
+    
 }
 
-document.getElementById("close_button")
-.addEventListener("click", (event) => {
-    const elem = document.getElementsByClassName("visit_counter")[0];
-    elem.style.display = "none";
-});
 
 
 check_visit_and_increment();
