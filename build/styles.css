@@ -26,7 +26,7 @@ main{
 
 .visit_counter{
     font-weight: 700;
-    position: relative;
+    position: absolute;
     color: black;
     font-size: 1.5em;
 }
@@ -61,6 +61,7 @@ main h2{
     border-bottom: 1px solid black;
     margin-bottom: 0px;
 }
+
 .section-header{
     width: 100%;
     display: flex;
@@ -93,6 +94,9 @@ li{
         padding: 0;
     }
 
+    #visit_counter_container{
+        display: none;
+    }
 
     h1{
         text-align: center;

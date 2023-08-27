@@ -26,12 +26,11 @@ function setCounter(new_value){
     }
 }
 
-async function check_visit_and_increment(){
+async function check_visit_and_increment(url){
     let v_count_local = sessionStorage.getItem("v_count_local");
 
     if(v_count_local === null){
-        const url = "https://kdy0eottji.execute-api.us-east-1.amazonaws.com/serverless_lambda_stage/visitor_count";
-
+    
         const response = await fetch(url, {
             method: "PATCH",
             mode: "cors"
@@ -49,5 +48,5 @@ async function check_visit_and_increment(){
 }
 
 
-
-check_visit_and_increment();
+const api_gateway_url = "https://kdy0eottji.execute-api.us-east-1.amazonaws.com/serverless_lambda_stage/visitor_count";
+check_visit_and_increment(api_gateway_url);
