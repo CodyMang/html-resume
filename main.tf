@@ -32,14 +32,11 @@ provider "aws" {
 
 ## S3 Config
 resource "aws_s3_bucket" "bucket" {
-  bucket = "teraform-codymang-resume"
+  bucket = "codymang-resume-bucket"
 
   tags = {
-    Name        = "Resume Bucket"
-    Environment = "Dev"
+    Name        = "Resume Bucket Terraform"
   }
-
-
 }
 
 resource "aws_s3_bucket_website_configuration" "bucket" {
@@ -123,7 +120,7 @@ resource "aws_s3_object" "object1" {
 
 ## Certificate Config
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "terraform.codymangham.com"
+  domain_name       = var.domain_name
   validation_method = "DNS"
 
   lifecycle {
@@ -132,7 +129,7 @@ resource "aws_acm_certificate" "cert" {
 }
 
 data "aws_route53_zone" "route" {
-  name      = "codymangham.com"
+  name      = var.domain_name
   private_zone = false
 }
 
@@ -176,7 +173,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
-  aliases = ["terraform.codymangham.com"]
+  aliases = [var.domain_name]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -221,7 +218,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 resource "aws_cloudfront_origin_access_control" "default" {
-  name                              = "Terraform Resume"
+  name                              = "Resume"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
@@ -229,7 +226,7 @@ resource "aws_cloudfront_origin_access_control" "default" {
 
 resource "aws_route53_record" "terraform" {
   zone_id = data.aws_route53_zone.route.zone_id
-  name    = "terraform"
+  name    = "codymangham.com"
   type    = "A"
 
   alias {

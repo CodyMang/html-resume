@@ -7,3 +7,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
 variable "AWS_REGION" {
     type        = string
 }
+variable "domain_name" {
+    type        = string
+    default     = "codymangham.com"
+}
