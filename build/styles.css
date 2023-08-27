@@ -26,7 +26,7 @@ main{
 
 .visit_counter{
     font-weight: 700;
-    position: fixed;
+    position: relative;
     color: black;
     font-size: 1.5em;
 }
@@ -40,6 +40,9 @@ main{
 #v_count {
     transition: --num 1s;
     counter-reset: num var(--num);
+
+    /* iphone safari support */
+    -webkit-transition: --num 1s; 
 }
 
 #v_count::after {
