@@ -22,7 +22,8 @@ function setCounter(new_value){
         element.style.setProperty("display","none")
     }
     else{
-        element.style.setProperty("--num",parseInt(new_value))
+        element.innerHTML = ""; //To reset animation
+        element.style.setProperty("--num", parseInt(new_value))
     }
 }
 
