@@ -1,120 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
     <title>Resume</title>
 </head>
+
 <body>
 
     <main>
         <div id="visit_counter_container">
             <span class="visit_counter">Visitor Count: <span id="v_count"></span></span>
         </div>
-        <h1>Cody Mangham</h1>
-        <h4>Orange County, CA • <a href="mailto:cody.w.magham@gmail.com">cody.w.magham@gmail.com</a> • <a href="https://github.com/CodyMang">github.com/CodyMang</a> • <a href="https://www.linkedin.com/in/cody-mangham/">linkedin.com/in/cody-mangham</a></h4>
+        <h1 class="name-title">Cody Mangham</h1>
+        <h4 class="contact-info">Orange County, CA • 
+            <a href="mailto:cody.w.magham@gmail.com">cody.w.magham@gmail.com</a> • 
+            <a href="https://github.com/CodyMang">github.com/CodyMang</a>
+        </h4>
         <h2>Education</h2>
-            <div class="section-container">
-                    <div class="section-header">
-                        <h3>California State University, Fullerton</h3>
-                        <h3>Dec 2022</h3>
-                    </div>
-                    <div class="section-content">
-                        <span>
-                            Bachelor of Science, Computer Science
-                        </span>
-                        <span>
-                            GPA: 3.6/4.0; Cum Laude
-                        </span>
-                        <span>
-                            Relevant Coursework: Data Structures & Algorithms; Software Testing; Backend Development
-                        </span>
-                    </div>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>California State University, Fullerton</h3>
+                <h3>Dec 2022</h3>
             </div>
-            <div class="section-container">
-                <div class="section-header">
-                    <h3>Orange Coast College</h3>
-                    <h3>May 2020</h3>
-                </div>
-                <div class="section-content">
-                    <span>
-                        Associate of Science, Computer Science
-                    </span>
-                    <span>
-                        Certificate of Achievement in C++
-                    </span>
-                </div>
+            <div class="section-content">
+                <span>
+                    Bachelor of Science, Computer Science
+                </span>
+                <span>
+                    GPA: 3.6/4.0; Cum Laude
+                </span>
+                <span>
+                    Relevant Coursework: Data Structures & Algorithms; Software Testing; Backend Development
+                </span>
             </div>
+        </div>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>Orange Coast College</h3>
+                <h3>May 2020</h3>
+            </div>
+            <div class="section-content">
+                <span>
+                    Associate of Science, Computer Science
+                </span>
+                <span>
+                    Certificate of Achievement in C++
+                </span>
+            </div>
+        </div>
         <h2>Projects</h2>
-            <div class="section-container">
-                <div class="section-header">
-                    <h3>My Safe Space <span>&#8212;</span> Security App for Ubuntu</h3>
-                    <h3>Fall 2022</h3>
-                </div>
-                <ul class="section-content">
-                    <li>
-                        Designed Qt interface with PyQT to help users better utilize the features that come with the Ubuntu Linux operating system 
-                    </li>
-                    <li>
-                        Increased ease and speed of deployment by implementing a GitHub CI script that automatically tested application when pushed
-                    </li>
-                    <li>
-                        Optimized unit tests by 30% by implementing tox and xvfb to run multiple unit tests synchronously
-                    </li>
-                </ul>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>My Safe Space <span>&#8212;</span> Security App for Ubuntu</h3>
             </div>
-            <div class="section-container">
-                <div class="section-header">
-                    <h3>Chitchat <span>&#8212;</span> Full Stack Messaging Website</h3>
-                    <h3>Spring 2023</h3>
-                </div>
-                <ul class="section-content">
-                    <li>
-                        Developed and deployed a real-time end-to-end encrypted (E2EE) 
-                        messaging service on AWS using Java Spring for the backend, 
-                        React for the frontend, and PostgreSQL for the database
-                    </li>
-                    <li>
-                        Efficiently managed storage and delivery of images and large files by configuring AWS S3 buckets, optimizing media handling for the messaging service
-                    </li>
-                    <li>
-                        Implemented custom security filters using spring security to authenticate and authorize users
-                    </li>
-                    <li>
-                        Created custom mappings for requests and responses to increase speed of bug tracking and code refactoring 
-                    </li>
-                </ul>
+            <ul class="section-content">
+                <li>
+                    Designed a Qt interface to help users better utilize the features that come with the Ubuntu 
+                    Linux operating system to ensure security practices are being followed 
+                </li>
+                <li>
+                    Increased ease and speed of deployment by implementing a GitHub CI script that automatically tested
+                    application when pushed
+                </li>
+                <li>
+                    Optimized unit tests by 30% by implementing tox and xvfb to run multiple unit tests synchronously
+                </li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>Chitchat <span>&#8212;</span> Full Stack Messaging Website</h3>
             </div>
-            <div class="section-container">
-                <div class="section-header">
-                    <h3>Hippo <span>&#8212;</span> Flash Card Website</h3>
-                    <h3>Spring 2022</h3>
-                </div>
-                <ul class="section-content">
-                    <li>
-                        Produced an application to aggregate terms, questions, and other study materials into bite-size chunks for users to better retain knowledge
-                    </li>
-                    <li>
-                        Designed a RESTful API using ExpressJS that interacts with a responsive React user interface
-                    </li>
-                </ul>
+            <ul class="section-content">
+                <li>
+                    Developed and deployed a real-time messaging service on
+                    AWS using Java Spring for the backend,
+                    React for the frontend, and PostgreSQL for the database
+                </li>
+                <li>
+                    Managed storage and delivery of images and large files
+                    by configuring AWS S3 buckets, increasing the speed of
+                    delivery by up to 80%
+                </li>
+                <li>
+                    Implemented security filters using spring security to authenticate and authorize users
+                </li>
+                <li>
+                    Handmade custom mappings for requests and responses to increase speed of bug tracking and code
+                    refactoring
+                </li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>K-Means Parallel Computing </h3>
             </div>
-            <div class="section-container">
-                <div class="section-header">
-                    <h3>Microblog <span>&#8212;</span> Microservice API Backend</h3>
-                    <h3>Fall 2021</h3>
-                </div>
-                <ul class="section-content">
-                    <li>
-                        Engineered a microservice backend using Python FastAPI, organizing multiple services that utilized diverse databases, including Redis, SQLite, and DynamoDB.
-                    </li>
-                    <li>
-                        Utilized a beanstalkd messaging queue to efficiently organize and coordinate services within the project, alongside an implementation of a custom load balancing solution using HAProxy.
-                    </li>
-                </ul>
+            <ul class="section-content">
+                <li>
+                    Implemented a machine learning algorithm using C++ and OpenMPI to find and label groups of data
+                </li>
+                <li>
+                    Increased runtime execution time by over 60% by using parallel computing best practices
+                </li>
+                <li>
+                    Wrote a Python script to showcase data in an easily digestible view using matplotlib
+                </li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <div class="section-header">
+                <h3>Microblog <span>&#8212;</span> Microservice API Backend</h3>
             </div>
+            <ul class="section-content">
+                <li>
+                    Engineered a microservice backend using Python FastAPI, organizing multiple services that utilized
+                    diverse databases, including Redis, SQLite, and DynamoDB
+                </li>
+                <li>
+                    Utilized a beanstalkd messaging queue to organize and coordinate services within the project,
+                    alongside an implementation of a custom load balancing solution using HAProxy
+                </li>
+                <li>
+                    Created a docker compose file to easily manage all services and ensure proper separation of data
+                </li>
+            </ul>
+        </div>
 
         <h2>Skills</h2>
         <div class="section-container">
@@ -123,7 +137,7 @@
                     <strong>Technical:</strong> C++, Java, Python, JavaScript, HTML/CSS, React
                 </li>
                 <li>
-                    <strong>Software:</strong> CVersion Control (Git, GitHub), AWS (EC2/S3), Qt
+                    <strong>Software:</strong> Version Control (Git, GitHub), AWS (EC2/S3), Qt
                 </li>
             </ul>
         </div>
@@ -131,4 +145,5 @@
 
 </body>
 <script src="index.js"></script>
+
 </html>
